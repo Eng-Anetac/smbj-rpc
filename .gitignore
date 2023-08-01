@@ -5,3 +5,4 @@ target/
 dcerpc.iml
 .idea
 /.vscode/
+.java-version
