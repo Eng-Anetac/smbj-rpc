@@ -83,12 +83,10 @@ jobs:
           path: target/dcerpc-0.12.1-ANETAC.jar
           key: dcerpc-0.12.1-ANETAC-java11-${{ steps.get_commit_hash.outputs.commit_hash }}
 
-
-
       - name: Build
         if: steps.cache_artifact.outputs.cache-hit != 'true'
         run: |
-          mvn install -DskipTests -DJAVA_VERSION=17
+          mvn install -DskipTests -DJAVA_VERSION=11
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
@@ -129,7 +127,7 @@ jobs:
       - name: Build
         if: steps.cache_artifact.outputs.cache-hit != 'true'
         run: |
-          mvn install -DskipTests -DJAVA_VERSION=17
+          mvn install -DskipTests -DJAVA_VERSION=8
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
